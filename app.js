@@ -1,6 +1,6 @@
 // Konfigurasi
-const API_URL = "URL_WEB_APP_GOOGLE_APPS_SCRIPT_ANDA_DI_SINI"; // Ganti dengan URL dari Step 1
-const WA_NUMBER = "6281234567890"; // Ganti dengan nomor WA penjual
+const API_URL = "https://script.google.com/macros/s/AKfycbydMXghDju_v54-QaXZkQRGKmm4eES_rUPf0OXwzzpJPI8Bkn9-5wy_-teAadlYp10gYQ/exec"; // Ganti dengan URL dari Step 1
+const WA_NUMBER = "6285863710179"; // Ganti dengan nomor WA penjual
 
 // State Management
 let productsData = [];
