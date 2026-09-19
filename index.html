@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Warung</title>
+    <!-- Font Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Solid Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- App Bar (Header) -->
+    <header class="app-bar">
+        <div class="logo">
+            <i class="fas fa-bag-shopping logo-icon"></i> WarungApp <span>v0.2.0</span>
+        </div>
+        
+        <!-- Desktop Navigation (Sembunyi di HP) -->
+        <nav class="desktop-nav">
+            <div class="nav-item active" onclick="showPage('home-page')"><i class="fas fa-house"></i> Beranda</div>
+            <div class="nav-item" onclick="showPage('cart-page')"><i class="fas fa-cart-shopping"></i> Keranjang</div>
+            <div class="nav-item" onclick="showPage('admin-page')"><i class="fas fa-gear"></i> Admin</div>
+        </nav>
+
+        <div class="cart-icon" onclick="showPage('cart-page')">
+            <i class="fas fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main id="app-container">
+        
+        <!-- Halaman Utama (Katalog) -->
+        <section id="home-page" class="page active">
+            <!-- Space Iklan / Promo (Aksen Kuning) -->
+            <div class="promo-banner">
+                <div class="promo-content">
+                    <h3><i class="fas fa-star"></i> Promo Spesial!</h3>
+                    <p>Diskon menarik untuk produk pilihan hari ini.</p>
+                </div>
+            </div>
+            
+            <div class="section-title"><i class="fas fa-box-open"></i> Katalog Produk</div>
+            <div class="product-grid" id="product-list">
+                <div class="loading"><i class="fas fa-spinner fa-spin"></i> Memuat produk...</div>
+            </div>
+        </section>
+
+        <!-- Halaman Detail Produk -->
+        <section id="detail-page" class="page">
+            <button class="btn-back" onclick="showPage('home-page')"><i class="fas fa-arrow-left"></i> Kembali</button>
+            <div id="detail-content" class="card-container">
+                <!-- Detail produk akan diload di sini -->
+            </div>
+        </section>
+
+        <!-- Halaman Keranjang -->
+        <section id="cart-page" class="page">
+            <button class="btn-back" onclick="showPage('home-page')"><i class="fas fa-arrow-left"></i> Kembali</button>
+            <h2 class="section-title"><i class="fas fa-cart-shopping"></i> Keranjang Belanja</h2>
+            <div id="cart-list">
+                <!-- Item keranjang di sini -->
+            </div>
+            <div class="cart-summary card-container">
+                <div class="total">Total: <span id="cart-total">Rp 0</span></div>
+                <button class="btn-primary" onclick="checkoutWA()"><i class="fab fa-whatsapp"></i> Checkout via WhatsApp</button>
+            </div>
+        </section>
+
+        <!-- Halaman Admin (Hidden by default) -->
+        <section id="admin-page" class="page">
+            <button class="btn-back" onclick="showPage('home-page')"><i class="fas fa-arrow-left"></i> Kembali</button>
+            <h2 class="section-title"><i class="fas fa-gear"></i> Dashboard Admin</h2>
+            <div class="card-container">
+                <p class="text-muted">Kelola produk via Google Sheet.</p>
+                <button class="btn-primary" onclick="window.open('URL_GOOGLE_SHEET_ANDA', '_blank')">
+                    <i class="fas fa-table"></i> Buka Google Sheet
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation (Mobile Only) -->
+    <nav class="bottom-nav">
+        <div class="nav-item active" onclick="showPage('home-page')">
+            <i class="fas fa-house"></i>
+            <span>Beranda</span>
+        </div>
+        <div class="nav-item" onclick="showPage('cart-page')">
+            <i class="fas fa-cart-shopping"></i>
+            <span>Keranjang</span>
+        </div>
+        <div class="nav-item" onclick="showPage('admin-page')">
+            <i class="fas fa-gear"></i>
+            <span>Admin</span>
+        </div>
+    </nav>
+
+    <script src="app.js"></script>
+</body>
+</html>
